@@ -1,0 +1,39 @@
+<html>
+    <head>
+        <title>Login</title>
+        <link rel="stylesheet" type="text/css" href="CSS/login.css">
+    </head>
+    <body>
+            <input id="user_input" placeholder="Username"/>
+            <p id="user_error" class="error">* campo obbligatorio</p>
+            <br>
+            <input id="pass_input" placeholder="Password"/>
+            <p id="pass_error" class="error">* campo obbligatorio</p>
+            <br>
+            <button id="login_button" onclick="submit()">Login</button>
+        <script>
+            function submit(){
+                var username_input = document.getElementById("user_input").value;
+                var password_input = document.getElementById("pass_input").value;
+                if(username_input != "" && password_input!= ""){
+                    $.ajax({
+                    type: "POST",
+                    url: "login_script.php",
+                    data: {username:username_input, password:password_input},
+                    success: function(res){}
+                    })
+                }
+                else if(username_input == "" && password_input == ""){
+                    document.getElementById("user_error").style = "display:inline";
+                    document.getElementById("pass_error").style = "display:inline";
+                }   
+                else if(username_input == ""){
+                    document.getElementById("user_error").style = "display:inline";
+                }
+                else if(password_input == ""){
+                    document.getElementById("pass_error").style = "display:inline";
+                }
+            }
+        </script>
+    </body>
+</html>
