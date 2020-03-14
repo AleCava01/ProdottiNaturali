@@ -5,4 +5,6 @@
 </html>
 <?php
 include "DBsettings.php";
+$conn->"";
+
 ?>
