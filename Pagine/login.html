@@ -7,7 +7,7 @@
             <input id="user_input" placeholder="Username"/>
             <p id="user_error" class="error">* campo obbligatorio</p>
             <br>
-            <input id="pass_input" placeholder="Password"/>
+            <input type="password" id="pass_input" placeholder="Password"/>
             <p id="pass_error" class="error">* campo obbligatorio</p>
             <br>
             <button id="login_button" onclick="submit()">Login</button>
@@ -21,7 +21,7 @@
                     url: "login_script.php",
                     data: {username:username_input, password:password_input},
                     success: function(res){}
-                    })
+                    }); 
                 }
                 else if(username_input == "" && password_input == ""){
                     document.getElementById("user_error").style = "display:inline";
@@ -29,9 +29,13 @@
                 }   
                 else if(username_input == ""){
                     document.getElementById("user_error").style = "display:inline";
+                    document.getElementById("pass_error").style = "display:none";
+
                 }
                 else if(password_input == ""){
                     document.getElementById("pass_error").style = "display:inline";
+                    document.getElementById("user_error").style = "display:none";
+
                 }
             }
         </script>
