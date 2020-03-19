@@ -4,24 +4,37 @@
         <link rel="stylesheet" type="text/css" href="CSS/login.css">
     </head>
     <body>
-            <input id="user_input" placeholder="Username"/>
-            <p id="user_error" class="error">* campo obbligatorio</p>
-            <br>
-            <input type="password" id="pass_input" placeholder="Password"/>
-            <p id="pass_error" class="error">* campo obbligatorio</p>
-            <br>
-            <button id="login_button" onclick="submit()">Login</button>
-        <script>
+        <input type="text" id="user_input" placeholder="Username"/>
+        <p id="user_error" class="error">* campo obbligatorio</p>
+        <br>
+        <input type="password" id="pass_input" placeholder="Password"/>
+        <p id="pass_error" class="error">* campo obbligatorio</p>
+        <br>
+        <button id="login_button" onclick="submit()">Login</button>
+        <br>
+        <p id="serverResponse"></p>
+        <br>
+        <a href="register.html">Non hai un account?</a>
+        <script type="text/javascript">
+            const xhr = new XMLHttpRequest();
+            
             function submit(){
                 var username_input = document.getElementById("user_input").value;
                 var password_input = document.getElementById("pass_input").value;
                 if(username_input != "" && password_input!= ""){
-                    $.ajax({
-                    type: "POST",
-                    url: "login_script.php",
-                    data: {username:username_input, password:password_input},
-                    success: function(res){}
-                    }); 
+                    document.getElementById("user_error").style = "display:none";
+                    document.getElementById("pass_error").style = "display:none";
+
+                    xhr.onload = function(){
+                        const serverResponse = document.getElementById("serverResponse");
+                        if(this.responseText=="authorized"){
+                            location.href="homepage.php";
+                        }
+                        serverResponse.innerHTML = this.responseText;
+                    };
+                    xhr.open("POST","login_script.php");
+                    xhr.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+                    xhr.send("username="+username_input+"&password="+password_input);
                 }
                 else if(username_input == "" && password_input == ""){
                     document.getElementById("user_error").style = "display:inline";
@@ -39,5 +52,6 @@
                 }
             }
         </script>
+            
     </body>
 </html>
