@@ -14,7 +14,15 @@ $provincia = $_POST["provincia"];
 
 //crittografia della password
 $password = password_hash($password, PASSWORD_DEFAULT);
-
+//verifica esistenza profilo
+if(strtoupper(mysqli_fetch_array(mysqli_query($conn,"SELECT username FROM utente WHERE username like '".$username."';"))[0])==strtoupper($username)){
+    echo("utente già registrato");
+    exit();
+}
+if(strtoupper(mysqli_fetch_array(mysqli_query($conn,"SELECT email FROM utente WHERE email like '".$email."';"))[0])==strtoupper($email)){
+    echo("utente già registrato");
+    exit();
+}
 //inserimento nel database
 $sql = "INSERT INTO utente(username,password,email,nome,cognome,via,civico,cap,citta,provincia) VALUES ('".$username."','".$password."','".$email."','".$nome."','".$cognome."','".$via."',".$civico.",".$CAP.",'".$citta."','".$provincia."')";
 $result = mysqli_query($conn, $sql);
@@ -23,5 +31,7 @@ if($result != "1"){
 }
 else{
     echo("success");
+    session_start();
+    $_SESSION['username'] = $username;
 }
 ?>

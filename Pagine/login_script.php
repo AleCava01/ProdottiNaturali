@@ -5,6 +5,8 @@ $password = $_POST["password"];
 
 if(password_verify($password, mysqli_fetch_array($conn->query("SELECT password FROM Utente WHERE username LIKE '".$username."';"))["password"])){
     echo ("authorized");
+    session_start();
+    $_SESSION['username'] = $username;
     exit;
 }
 else{
