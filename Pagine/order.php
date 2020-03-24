@@ -6,19 +6,40 @@
 
     </head>
     <body>
-        <!--NAVBAR-->
+    <!--NAVBAR-->
+        <nav class="nav">
         <ul class="nav_ul">
-        <li class="nav_li"><img src="logo.png"></li>
-        <li class="nav_li"><a class="nav_a" href="homepage.php">Prodotti Naturali</a></li>
-        <li class="nav_li" style="float:right"><a class="nav_a" href="order.php">Carrello</a></li>
-        <li style="float:right" class="nav_li">
+            <li class="nav_li" style="float:right;"><a class="nav_a" href="homepage.php">Prodotti Naturali</a></li>
+            <li class="nav_li" style="float:left"><a class="nav_a" href="order.php">Acquista</a>
+            <ul class="dropdown_ul">
+                <?php
+                include 'DBsettings.php';
+                $cart_items = $conn->query("SELECT c.quantita, c.importo_parziale, p.nome FROM carrello as c, formato as f, prodotto as p WHERE c.id_f = f.id_f AND f.id_p=p.id_p");
+                $cart_item = mysqli_fetch_assoc($cart_items);
+                while($cart_item){
+                    echo("<li class='dropdown_li'><table class='dropdown_table'><tr class='dropdown_tr'>");
+                    echo("<td class='dropdown_td'>".$cart_item["nome"]."</td>");
+                    echo("<td class='dropdown_td'>Quantità: ".$cart_item["quantita"]."</td>");
+                    echo("<td class='dropdown_td'>Totale: ".$cart_item["importo_parziale"]."</td>");
+                    echo("</tr></table></li>");
+                    $cart_item = mysqli_fetch_assoc($cart_items);
+                }
+                ?>
+                </ul>
+            </li>
+            <li class="nav_li" style="float:left">
             <?php
             session_start();
             echo("<a class='nav_a' href='profile.php'>Logged as: ".$_SESSION["username"]."</a>");
             ?>
-        </li>
+            </li>
         </ul>
+        </nav>
         <!---->
+        <br>
+        <br>
+        <br>
+        <br>
         <div style="display:grid;">
             <input type="text" id="via_input" placeholder="Via"/>
             <input type="number" id="civico_input" placeholder="Civico"/>

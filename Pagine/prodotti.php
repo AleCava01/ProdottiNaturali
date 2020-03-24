@@ -6,20 +6,12 @@
 
 </head>
 <body>
-<!--NAVBAR-->
-<ul class="nav_ul">
-  <li class="nav_li"><img src="logo.png"></li>
-  <li class="nav_li"><a class="nav_a" href="homepage.php">Prodotti Naturali</a></li>
-  <li class="nav_li" style="float:right"><a class="nav_a" href="order.php">Carrello</a></li>
-  <li style="float:right" class="nav_li">
-    <?php
-    session_start();
-    echo("<a class='nav_a' href='profile.php'>Logged as: ".$_SESSION["username"]."</a>");
-    ?>
-  </li>
-</ul>
-<!---->
-
+<?php
+include "navbar.php";
+?>
+<script>
+  document.getElementById("location_indicator").innerHTML = "Prodotti";
+</script>
 
 <?php
 include "DBsettings.php";
