@@ -1,7 +1,13 @@
-table, tr, td, th{
+.product_table, .product_tr, .product_td{
     border:1px solid black;
     border-collapse: collapse;
+    text-align:center;
 }
-th{
-    background-color: blueviolet;
+
+.product_input{
+    height:30px;
+    width:40px;
+}
+.product_select{
+    height:30px;
 }

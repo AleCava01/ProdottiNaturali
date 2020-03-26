@@ -31,6 +31,7 @@ if($result != "1"){
 }
 else{
     echo("success");
+    mysqli_query($conn, "INSERT INTO ordine(stato, id_u) VALUES (0,".mysqli_fetch_assoc(mysqli_query($conn,"SELECT id_u FROM utente WHERE Username LIKE '".$username."'"))["id_u"].")");
     session_start();
     $_SESSION['username'] = $username;
 }

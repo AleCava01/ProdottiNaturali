@@ -2,6 +2,10 @@
     margin:0;
     padding:0;
 }
+body{
+  font-family: Arial, Times, serif;
+
+}
 .nav{
   width: 100%;
   height: 60px;
@@ -113,7 +117,11 @@
 }
 .dropdown_li{
     list-style: none;
-    padding:10px;
+    padding:3px;
+}
+.dropdown_table{
+  overflow: scroll;
+
 }
 .nav_li:hover .dropdown_ul{
   display: block;
@@ -124,7 +132,24 @@
   border: 1px solid black;
   border-collapse: collapse;
   text-align: center;
+  font-size: 12px;
 }
 .dropdown_td{
+  padding:4px;
+}
+.checkout_div{
+  text-align: center;
+  background-color: none;
   padding:10px;
+  text-decoration: none;
+  transition:0.4s;
+
+}
+.checkout_a{
+  text-decoration: none;
+  color:black;
+}
+.checkout_div:hover{
+  transition:0.2s;
+  background-color: rgba(212, 223, 57, 0.726);
 }

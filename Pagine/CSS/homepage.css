@@ -21,7 +21,7 @@ tr{
   height: 100%;
 }
 
-div{
+.category_div{
   height: 100%;
   text-align: center;
   background-color: none;
@@ -30,10 +30,11 @@ div{
 
 
 }
-div:hover{
+.category_div:hover{
   transition:0.2s;
-  background-color: #f614c53b;
+  background-color: #f614c52d;
 }
+
 p{
   text-decoration: none;
   color:white;
@@ -42,14 +43,13 @@ p{
   font-size: 36px;
   padding:15px;
 }
-a{
+.category_a{
   text-decoration: none;
   padding: 0 0 30 30;
 }
 
 body{
   overflow: hidden;
-  font-family: Arial, Times, serif;
   background-image: url("../Images/leaf_background.jpg");
   background-repeat:round;
 }

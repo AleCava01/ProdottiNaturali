@@ -1,0 +1,98 @@
+.order_div{
+    align-items: center;
+    justify-content:center
+}
+.summary_table, .summary_tr, .summary_th, .summary_td{
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+.order_p{
+    color:white;
+    background-color: rgb(20, 20, 20);
+    text-transform: capitalize;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+
+}
+.order_input{
+    background: none;
+    text-align: center;
+    padding:10px;
+    width: 100%;
+    font-weight: bold;
+    border:none;
+    margin-top: 3px;
+    color:white;
+}
+.order_input:hover{
+    background-color: rgba(255, 255, 255, 0.63);
+    color:black;
+}
+
+::placeholder { 
+    color: white;
+    opacity: 1;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+.order_select{
+    background: none;
+    text-align: center;
+    padding:5px;
+    width: 100%;
+    font-weight: bold;
+    margin-top: 3px;
+    color:white;
+
+}
+.order_option{
+    background-color: rgb(20, 20, 20);
+}
+.order_option_default{
+    background-color: rgb(20, 20, 20);
+    color:gray;
+}
+
+option{
+    background-color: none;
+}
+
+.order_button{
+    margin-top: 3px;
+    width: 100%;
+    background: none;
+}
+.order_div{
+    height: 100%;
+    float: right;
+    background-color: rgba(0, 0, 0, 0.384);
+    text-align: center;
+}
+*{
+    overflow: hidden;
+}
+
+.summary_div{
+    background-color: rgb(255, 255, 255);
+    text-align: center;
+    overflow: auto;
+    max-height: 100%;
+}
+.summary_table{
+    width: 100%;
+    margin-bottom: 50px;
+}
+.summary_td{
+    text-align: center;
+}
+body{
+    background-image: url("../Images/leaf_background.jpg");
+    background-repeat:round;
+}
+.content_div{
+    margin-top: 60px;
+}

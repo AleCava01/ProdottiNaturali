@@ -51,18 +51,18 @@ create table utente(
 
 create table ordine(
     id_o int not null auto_increment primary key,
-    data datetime not null,
-    via varchar(255) not null,
-    civico int not null,
-    cap int not null,
-    citta varchar(255) not null,
-    provincia varchar(255) not null,
-    pagamento int not null,
+    data datetime,
+    via varchar(255),
+    civico int,
+    cap int,
+    citta varchar(255),
+    provincia varchar(255),
+    pagamento int,
     note varchar(255),
-    stato int not null,
-    spedizione int not null,
-    importo decimal(7,2) not null,
-    id_u int not null,
+    stato int,
+    spedizione int,
+    importo decimal(7,2),
+    id_u int,
     foreign key(id_u) references utente(id_u)
 )engine innodb;
 
@@ -78,7 +78,7 @@ create table carrello(
 /* POPOLAZIONE DB */
 insert into categoria(nome,descrizione) values ("Oli Essenziali", "I nostri oli essenziali sono puri e 100% naturali, certificati e privi di sostanze sintetiche.
 Queste sostanze volatili, pregiate, profumate e ricche di principi attivi, vengono ottenute per estrazione a partire da materiale vegetale aromatico ricco in essenze. Provengono dai fiori, frutti, foglie, dalle cortecce e dalle resine. L’estrazione avviene mediante distillazione in corrente di vapore, spremitura o enflouragei.");
-insert into categoria(nome,descrizione) values ("Saponi", "I NOSTRI SAPONI 100% NATURALI SONO LAVORATI A MANO, SONO UNICI E NON CONTENGONO RIEMPITIVI ECONOMICI, DERIVATI DEL PETROLIO, PROFUMI O COLORANTI ARTIFICIALI, OLIO DI PALMA E DI PALMISTO, CONSERVANTI E NON SONO TESTATI SU ANIMALI.");
+insert into categoria(nome,descrizione) values ("Saponi", "I nostri saponi 100% naturali sono lavorati a mano, sono unici e non contengono riempitivi economici, derivati del petrolio, profumi o coloranti artificiali, olio di palma e di palmisto, conservanti e non sono testati su animali.");
 insert into categoria(nome,descrizione) values ("Creme","Prodotti mirati per la cura e il nutrimento di viso e collo. Attivi naturali altamente efficaci in grado di prevenire e migliorare i segni del tempo!");
 insert into sottocategoria(nome,descrizione,id_c) values ("Rilassanti", "Un'accurata selezione di oli essenziali per eliminare lo stess ambientale, alimentare, fisico, mentale ed emotivo.", 1);
 insert into sottocategoria(nome,descrizione,id_c) values ("Digestivi", "Un'accurata selezione di oli essenziali per stimolare il processo digestivo.", 1);
