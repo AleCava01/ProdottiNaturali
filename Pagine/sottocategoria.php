@@ -1,7 +1,6 @@
 <html>
     <head>
-        <title>Oli essenziali</title>
-        <link rel="stylesheet" type="text/css" href="CSS/homepage.css">
+        <link rel="stylesheet" type="text/css" href="CSS/sottocategoria.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="CSS/navbar.css">
 
@@ -16,15 +15,14 @@ if(!isset($_SESSION['id_u'])){
   exit();
 }
 ?>
-<script>
-  document.getElementById("location_indicator").innerHTML = "Sottocategorie";
-</script>
 
 <?php
 include "DBsettings.php";
 $conn->query("USE ".$db_name.";");
 $categories = $conn -> query("SELECT DISTINCT sottocategoria.id_sc,sottocategoria.nome,sottocategoria.descrizione FROM sottocategoria, categoria WHERE sottocategoria.id_c=".$_GET["id_c"]);
 $category = mysqli_fetch_assoc($categories);
+$cat = mysqli_fetch_assoc($conn -> query("SELECT nome FROM categoria WHERE id_c=".$_GET["id_c"]))["nome"];
+echo("<script>document.getElementById('location_indicator').innerHTML='".$cat."';</script>");
 echo("<table class='category_table'><tr>");
 while($category){
   echo("<td>");

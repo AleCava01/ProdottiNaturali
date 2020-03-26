@@ -15,7 +15,7 @@ if(!isset($_SESSION['id_u'])){
 }
 ?>
 <script>
-  document.getElementById("location_indicator").innerHTML = "Categorie";
+  document.getElementById("location_indicator").innerHTML = "Prodotti Naturali";
 </script>
 <?php
 include 'DBsettings.php';
@@ -37,6 +37,5 @@ while($category){
 }
 echo("</tr></table>");
 ?>    
-
 </body>
 </html>

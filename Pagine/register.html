@@ -1,26 +1,41 @@
 <html>
     <head>
         <title>Register</title>
-        <link rel="stylesheet" type="text/css" href="CSS/login.css">
+        <link rel="stylesheet" type="text/css" href="CSS/register.css">
     </head>
     <body>
-        <div style="display:grid;">
-            <input type="text" id="username_input" placeholder="Username"/>
-            <input type="text" id="password_input" placeholder="Password"/>
-            <input type="text" id="email_input" placeholder="Email"/>
-            <input type="text" id="nome_input" placeholder="Nome"/>
-            <input type="text" id="cognome_input" placeholder="Cognome"/>
-            <input type="text" id="via_input" placeholder="Via"/>
-            <input type="number" id="civico_input" placeholder="Civico"/>
-            <input type="number" id="CAP_input" placeholder="CAP"/>
-            <input type="text" id="citta_input" placeholder="Citta"/>
-            <input type="text" id="provincia_input" placeholder="Provincia"/>
-            <button onclick="submit()">Registrati</button>
-            <p id="serverResponse"></p>
-            <a href="login.html">Login</a>
+        <div class="outer_div">
+            <div class="content_div">
+                <table>
+                    <tr>
+                        <td>
+                            <div style="float: right; text-align: center;">
+                                <input class="register_input" type="text" id="username_input" placeholder="Username"/>
+                                <input class="register_input" type="password" id="password_input" placeholder="Password"/>
+                                <input class="register_input" type="text" id="email_input" placeholder="Email"/>
+                                <input class="register_input" type="text" id="nome_input" placeholder="Nome"/>
+                                <input class="register_input" type="text" id="cognome_input" placeholder="Cognome"/>
+                            </div>
+                        </td>
+                        <td>
+                            <div style="float: right; text-align: center;">
+                                <input class="register_input" type="text" id="via_input" placeholder="Via"/>
+                                <input class="register_input" type="number" id="civico_input" placeholder="Civico"/>
+                                <input class="register_input" type="number" id="CAP_input" placeholder="CAP"/>
+                                <input class="register_input" type="text" id="citta_input" placeholder="Citta"/>
+                                <input class="register_input" type="text" id="provincia_input" placeholder="Provincia"/>
+                            </div>
+                        </td>
+                    </tr>
 
+                </table>
+                <button class="register_button" onclick="submit()">Registrati</button>
+                <br>
+                <a class="login_link" href="login.html">Login</a>
+                <p class="error" id="serverResponse"></p>
+
+            </div>
         </div>
-        
         <script type="text/javascript">
             const xhr = new XMLHttpRequest();
 

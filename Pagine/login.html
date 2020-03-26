@@ -4,17 +4,22 @@
         <link rel="stylesheet" type="text/css" href="CSS/login.css">
     </head>
     <body>
-        <input type="text" id="user_input" placeholder="Username"/>
-        <p id="user_error" class="error">* campo obbligatorio</p>
-        <br>
-        <input type="password" id="pass_input" placeholder="Password"/>
-        <p id="pass_error" class="error">* campo obbligatorio</p>
-        <br>
-        <button id="login_button" onclick="submit()">Login</button>
-        <br>
-        <p id="serverResponse"></p>
-        <br>
-        <a href="register.html">Non hai un account?</a>
+        <div class="outer_div">
+        <div class="content_div">
+            <input style="margin-top:20px" class="login_input" type="text" id="user_input" placeholder="Username"/>
+            <p id="user_error" class="error">*</p>
+
+            <hr width="80%">
+            <input class="login_input" type="password" id="pass_input" placeholder="Password"/>
+            <p id="pass_error" class="error">*</p>
+
+            <hr width="80%">
+            <button class="login_button" id="login_button" onclick="submit()">Log in</button>
+            <br>
+            <a class="register_link" href="register.html">Non hai un account?</a>
+            <p style="color:white; font-size: 12px;" id="serverResponse"></p>
+        </div>
+    </div>
         <script type="text/javascript">
             const xhr = new XMLHttpRequest();
             
