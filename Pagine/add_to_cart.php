@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION['id_u'])){
+    header("location: login.html");
+    exit();
+}
 include 'DBsettings.php';
 $formato = $_GET["formato"];
 $quantita = $_GET["quantita"];

@@ -1,0 +1,13 @@
+.order_view_table, .order_view_tr, .order_view_th, .order_view_td{
+    border:1px solid black;
+    border-collapse: collapse;
+    text-align: center;
+    background-color: white;
+}
+.order_view_table{
+    width: 100%;
+}
+body{
+    background-image: url("../Images/leaf_background.jpg");
+    background-repeat:round;
+  }

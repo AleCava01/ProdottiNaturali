@@ -2,6 +2,8 @@
     <head>
         <title>Login</title>
         <link rel="stylesheet" type="text/css" href="CSS/login.css">
+        <link rel="icon" href="Images/favicon.ico"/>
+
     </head>
     <body>
         <div class="outer_div">
@@ -22,7 +24,13 @@
     </div>
         <script type="text/javascript">
             const xhr = new XMLHttpRequest();
-            
+            var input = document.getElementById("pass_input");
+            input.addEventListener("keyup", function(event) {
+            if (event.keyCode === 13) {
+                event.preventDefault();
+                document.getElementById("login_button").click();
+            }
+            });
             function submit(){
                 var username_input = document.getElementById("user_input").value;
                 var password_input = document.getElementById("pass_input").value;

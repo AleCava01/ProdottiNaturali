@@ -1,7 +1,10 @@
 <html>
 <head>
+<title>Prodotti</title>
+
 <link rel="stylesheet" type="text/css" href="CSS/navbar.css">
 <link rel="stylesheet" type="text/css" href="CSS/products.css">
+<link rel="icon" href="Images/favicon.ico"/>
 
 
 </head>

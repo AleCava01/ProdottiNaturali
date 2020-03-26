@@ -1,8 +1,10 @@
 <html>
     <head>
+      <title>Sottocategorie</title>
         <link rel="stylesheet" type="text/css" href="CSS/sottocategoria.css">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" type="text/css" href="CSS/navbar.css">
+        <link rel="icon" href="Images/favicon.ico"/>
 
 
 

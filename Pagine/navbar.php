@@ -39,6 +39,7 @@
       <a href="logout.php" class="nav_exit_a" style="width:100px; text-align:center">Esci</a>
     </li>
     <li class="nav_li_locator" style="position:absolute; right: 50%;left: 50%;transform: translate(-50%,0%); width:170px; text-align:center;"><a id="location_indicator" class="nav_indicator"></a><a class="nav_homepage" href="homepage.php">Homepage</a></li>
+    <li class="nav_li_order_view" style="float:right;"><a class="nav_a" style="width:100px; text-align:center;" href="order_view.php">I tuoi ordini</a>
 
   </ul>
 </nav>

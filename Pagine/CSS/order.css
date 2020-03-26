@@ -9,7 +9,7 @@
 }
 .order_p_title{
     color:white;
-    background-color: rgba(33, 9, 56, 0.836);
+    background-color: rgba(65, 17, 110, 0.836);
     text-transform: capitalize;
     height: 40px;
     text-align: center;
@@ -97,8 +97,8 @@ option{
     float: right;
     background-color: rgb(255, 255, 255);
     text-align: center;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 5px;
+
 
 }
 
@@ -120,12 +120,13 @@ option{
     text-align: center;
     overflow: auto;
     max-height: 100%;
-    border-bottom-left-radius: 5px;
-    border-bottom-right-radius: 5px;
+    border-radius: 5px;
+
 }
 .summary_table{
     width: 100%;
     margin-bottom: 60px;
+    margin-top: 3px;
 }
 .summary_td{
     text-align: center;

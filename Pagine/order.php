@@ -3,6 +3,7 @@
         <title>Checkout</title>
         <link rel="stylesheet" type="text/css" href="CSS/navbar.css">
         <link rel="stylesheet" type="text/css" href="CSS/order.css">
+        <link rel="icon" href="Images/favicon.ico"/>
 
     </head>
     <body>

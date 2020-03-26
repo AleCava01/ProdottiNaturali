@@ -13,7 +13,7 @@ body{
   float: left;
 }
 
-.nav_li{
+.nav_li, .nav_li_order_view{
     float: left;
     list-style: none;
     position: relative;
@@ -153,5 +153,9 @@ body{
 .checkout_div:hover{
   transition:0.2s;
   color:white;
-  background-color: rgba(33, 9, 56, 0.836);
+  background-color: rgba(65, 17, 110, 0.836);
+}
+.nav_li_order_view:hover{
+  transition:0.3s;
+  background-color: rgba(223, 158, 39, 0.548);
 }

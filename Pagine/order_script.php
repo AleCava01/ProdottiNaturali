@@ -1,5 +1,9 @@
 <?php
 session_start();
+if(!isset($_SESSION['id_u'])){
+    header("location: login.html");
+    exit();
+}
 $id_u = $_SESSION["id_u"];
 include 'DBsettings.php';
 if(mysqli_fetch_assoc($conn->query("SELECT f.id_f, o.id_o, f.capacita, c.quantita, c.importo_parziale, p.nome FROM carrello as c, formato as f, prodotto as p, ordine as o WHERE o.stato=0 AND c.id_f = f.id_f AND f.id_p=p.id_p AND c.id_o=o.id_o AND o.id_u=".$id_u))["id_f"]==""){
